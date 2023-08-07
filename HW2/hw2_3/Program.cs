@@ -35,7 +35,7 @@ else
 int Prompt(string message)
 {
     Console.Write(message);
-    string value = Console.ReadLine() ??"";
+    string value = Console.ReadLine() ?? "";
     int result = Convert.ToInt32(value);
     return result;
 }
@@ -68,6 +68,6 @@ if (ValidateWeekday(weekDay))
 
     else
     {
-    Console.WriteLine("Придется поработать");
+        Console.WriteLine("Придется поработать");
     }
 }
