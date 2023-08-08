@@ -23,18 +23,15 @@ int num = GetNumberFromUser("Введите целое, пятизначное �
 #endregion --- 01. Input operations. ---
 
 #region --- 02. Business logic. ---
-
 string result;
-try
+if (ValidateNumber(num))
 {
     result = CheckNumberRank(num);
 }
-catch(Exception exc)
+else
 {
-    Console.WriteLine($"ОШИБКА! {exc.Message}");
-    return; // Завершение программы в случае ошибки
+    result = "Ошибка ввода данных";
 }
-if (ValidateNumber(result));
 #endregion --- 02. Business logic. ---
 
 #region --- 03. Output operations. ---
@@ -61,7 +58,7 @@ static int GetNumberFromUser(string message, string errorMessage)
 
 bool ValidateNumber(int num)
 {
-    if (num < 10000 && num > 99999)
+    if (num < 10000 || num > 99999)
     {
         Console.WriteLine("Ошибка! Читайте условие внимательнее");
         return false;
