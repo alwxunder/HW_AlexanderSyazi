@@ -36,7 +36,7 @@ catch (Exception exc)
 #endregion --- 02. Business logic ---
 
 #region --- 03. Output operations ---
-Console.WriteLine($"Таблица кубов от 1 до N: {result}");
+//Console.WriteLine($"Таблица кубов от 1 до {n}: {result}");
 #endregion --- 03. Output operations ---
 // -------------------------- Конец программы ----------------------------------
 
@@ -58,15 +58,19 @@ static int GetNumberFromUser(string message, string errorMessage)
         }
     }
 }
-
+//Задача решается, но с костылями, как сделать с выводом в output operations не понимаю,
+//получаю одно значение куба числа
 int CounterCube(int n)
-{   
-    int k = 0;
-    for (int i = 1; i <= n; i++)
+{
+    int k = 1;
+    int i = 1;
+    Console.WriteLine($"Таблица кубов от 1 до {n}: ");
+    while (i <= n)
     {
         k = Convert.ToInt32(Math.Pow(i, 3));
+        i++;
+        Console.Write($"{k}, ");
     }
     return k;
-    
 }
 // ---------------------- Конец определения методов ----------------------------
