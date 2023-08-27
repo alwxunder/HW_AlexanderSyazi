@@ -34,5 +34,5 @@ int powerBase = Prompt("Введите основание: ");
 int exponent = Prompt("Введите показатель: ");
 if (ValidateExponent(exponent))
 {
-    System.Console.WriteLine($"Число{powerBase} в степени {exponent} равно {Power(powerBase, exponent)}");
+    System.Console.WriteLine($"Число {powerBase} в степени {exponent} равно {Power(powerBase, exponent)}");
 }
