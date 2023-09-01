@@ -48,7 +48,7 @@ int GetNegativeSum(int[] arr)
 }
 */
 
-
+/*
 // Задача 39: Напишите программу, которая перевернёт одномерный массив 
 // (последний элемент будет на первом месте, а первый - на последнем и т.д.)
 // [1 2 3 4 5] -> [5 4 3 2 1]
@@ -93,6 +93,7 @@ void ReverseArray2(int[] inArray)
         inArray[inArray.Length - i - 1] = k;
     }
 }
+*/
 
 /*
 // Задача 40: Напишите программу, 
@@ -125,3 +126,46 @@ static int GetNumberFromUser(string message, string errorMessage)
     }
 }
 */
+
+// Задача 46: Задайте двумерный массив размером m × n,
+// заполненный случайными целыми числами.
+// m = 3, n = 4.
+// 1 4 8 19
+// 5 -2 33 -2
+// 77 3 8 1
+
+Console.Clear();
+
+Console.Write("Введите количество строк массива: ");
+int rows = int.Parse(Console.ReadLine() ?? "");
+
+Console.Write("Введите количество столбцов массива: ");
+int columns = int.Parse(Console.ReadLine() ?? "");
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] result = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            result[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] inArray)
+{
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            Console.Write($"{inArray[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
