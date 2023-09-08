@@ -134,6 +134,7 @@ static int GetNumberFromUser(string message, string errorMessage)
 // 5 -2 33 -2
 // 77 3 8 1
 
+/*
 Console.Clear();
 
 Console.Write("Введите количество строк массива: ");
@@ -169,3 +170,5 @@ void PrintArray(int[,] inArray)
         Console.WriteLine();
     }
 }
+*/
+
